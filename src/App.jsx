@@ -1,38 +1,35 @@
-// src/App.jsx
-import { Routes, Route } from "react-router-dom";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-// Layouts
-import PublicLayout from "./layouts/PublicLayout";
-import AdminLayout from "./layouts/AdminLayout";
+function App() {
+  const [count, setCount] = useState(0)
 
-// Páginas públicas
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-
-// Páginas admin
-import Admin from "./pages/Admin";
-import UsersList from "./pages/UsersList";
-import UserForm from "./pages/UserForm";
-import Profile from "./pages/Profile";
-import Settings from "./pages/Settings";
-
-export default function App() {
   return (
-    <Routes>
-      {/* Rutas públicas */}
-      <Route element={<PublicLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-      </Route>
-
-      {/* Rutas de administración */}
-      <Route element={<AdminLayout />}>
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/users" element={<UsersList />} />
-        <Route path="/admin/users/new" element={<UserForm />} />
-        <Route path="/admin/profile" element={<Profile />} />
-        <Route path="/admin/settings" element={<Settings />} />
-      </Route>
-    </Routes>
-  );
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
+
+export default App
