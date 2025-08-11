@@ -1,0 +1,12 @@
+/* src/styles/AdminLayout.css */
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
